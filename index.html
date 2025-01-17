@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johan Art</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        figure {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Portfolio Logo">
+        <h1>Johan Art</h1>
+        <p>I'm making Logos and simple 3D Models</p>
+    </header>
+    <main>
+        <section>
+            <h2 class="title">Logos</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="Image1.jpg" alt="Logo 1">
+                    <figcaption>Halloween variations- HDQ</figcaption>
+                </figure>
+                <figure>
+                    <img src="image2.gif" alt="Logo 2">
+                    <figcaption>Christmas variation - HDQ</figcaption>
+                </figure>
+                <figure>
+                    <img src="image3.png" alt="Logo 3">
+                    <figcaption>HDQ - Curved</figcaption>
+                </figure>
+                <figure>
+                    <img src="image4.png" alt="Logo 4">
+                    <figcaption>HDQ - Straight</figcaption>
+                </figure>
+                <figure>
+                    <img src="image5.jpg" alt="Logo 5">
+                    <figcaption>HDQ - Variation A</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <h2 class="title">3D Models</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="3D1.png" alt="3D Model 1">
+                    <figcaption>HDQ Logo</figcaption>
+                </figure>
+                <figure>
+                    <img src="3D2.png" alt="3D Model 2">
+                    <figcaption>Glass Bottle</figcaption>
+                </figure>
+                <figure>
+                    <img src="3D3.png" alt="3D Model 3">
+                    <figcaption>Low Poly House</figcaption>
+                </figure>
+                <figure>
+                    <img src="3D4.png" alt="3D Model 4">
+                    <figcaption>Cup of Coffee</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Johan Art. All rights reserved.</p>
+    </footer>
+</body>
+</html>
