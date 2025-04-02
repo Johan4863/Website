@@ -3,106 +3,455 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johan Art</title>
+    <title>Johan Art - Logo & 3D Design Portfolio</title>
+    <meta name="description" content="Professional logo design and 3D modeling services by Johan Art">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --accent-color: #4cc9f0;
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
             color: white;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        .header-content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
         header img {
-            max-width: 150px;
-            margin-bottom: 1rem;
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
+        
+        header img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .contact-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-links .contact-text {
+            font-size: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+        
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            padding: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
-        figure {
-            text-align: center;
+        
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
-        img {
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
             width: 100%;
-            height: auto;
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
         }
-        figcaption {
-            margin-top: 0.5rem;
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item figcaption {
+            padding: 1.5rem;
+        }
+        
+        .gallery-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .gallery-item p {
+            color: var(--text-light);
             font-size: 0.9rem;
-            color: #555;
         }
-        footer {
+        
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
             text-align: center;
-            padding: 1rem 0;
-            background-color: #333;
+        }
+        
+        .about-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .contact-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background: var(--dark-color);
             color: white;
-            margin-top: 2rem;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gallery-item {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1rem; }
+            .gallery { grid-template-columns: 1fr; }
+            .about-section, .contact-info { padding: 1.5rem; }
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .contact-methods {
+                align-items: flex-start;
+            }
+            .contact-method {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Portfolio Logo">
-        <h1>Johan Art</h1>
-        <p>I'm making Logos and simple 3D Models</p>
+        <div class="header-content">
+            <img src="logo.png" alt="Johan Art Logo">
+            <h1>Johan Art</h1>
+            <p class="tagline">Crafting Memorable Logos & Engaging 3D Models</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="contact-links">
+                <a href="https://discord.com/users/pathfinder157" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span class="contact-text">Discord</span>
+                </a>
+                
+            </div>
+        </div>
     </header>
+    
     <main>
-        <section>
-            <h2 class="title">Logos</h2>
+        <section id="about" class="about-section">
+    <h2>About What I Do</h2>
+    <p>I make cool logos that help businesses stand out, and simple 3D designs that can be used in many ways. I focus on making things that look good and work well for my clients.</p>
+    <p>I love helping people turn their ideas into real designs! Whether you need a logo or a 3D model, I'd be happy to work with you.</p>
+</section>
+        
+        <section id="logos">
+            <h2 class="section-title">Logo Designs</h2>
             <div class="gallery">
-                <figure>
-                    <img src="Image1.jpg" alt="Logo 1">
-                    <figcaption>Halloween variations- HDQ</figcaption>
+                <figure class="gallery-item">
+                    <img src="Image1.jpg" alt="Halloween Logo Variation" loading="lazy">
+                    <figcaption>
+                        <h3>Halloween Variations</h3>
+                        <p>HDQ brand with spooky seasonal twist</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="image2.gif" alt="Logo 2">
-                    <figcaption>Christmas variation - HDQ</figcaption>
+                <figure class="gallery-item">
+                    <img src="image2.gif" alt="Christmas Logo Variation" loading="lazy">
+                    <figcaption>
+                        <h3>Christmas Variation</h3>
+                        <p>Festive HDQ logo with holiday elements</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="image3.png" alt="Logo 3">
-                    <figcaption>HDQ - Curved</figcaption>
+                <figure class="gallery-item">
+                    <img src="image3.png" alt="Curved HDQ Logo" loading="lazy">
+                    <figcaption>
+                        <h3>HDQ - Curved</h3>
+                        <p>Dynamic curved version with smooth flow</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="image4.png" alt="Logo 4">
-                    <figcaption>HDQ - Straight</figcaption>
+                <figure class="gallery-item">
+                    <img src="image4.png" alt="Straight HDQ Logo" loading="lazy">
+                    <figcaption>
+                        <h3>HDQ - Straight</h3>
+                        <p>Clean, geometric version with sharp angles</p>
+                    </figcaption>
                 </figure>
             </div>
         </section>
-        <section>
-            <h2 class="title">3D Models</h2>
+        
+        <section id="models">
+            <h2 class="section-title">3D Models</h2>
             <div class="gallery">
-                <figure>
-                    <img src="3D1.png" alt="3D Model 1">
-                    <figcaption>HDQ Logo</figcaption>
+                <figure class="gallery-item">
+                    <img src="3D1.png" alt="3D HDQ Logo" loading="lazy">
+                    <figcaption>
+                        <h3>HDQ Logo</h3>
+                        <p>Three-dimensional brand representation</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="3D2.png" alt="3D Model 2">
-                    <figcaption>Glass Bottle</figcaption>
+                <figure class="gallery-item">
+                    <img src="3D2.png" alt="Glass Bottle 3D Model" loading="lazy">
+                    <figcaption>
+                        <h3>Glass Bottle</h3>
+                        <p>Realistic glass material with refraction</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="3D3.png" alt="3D Model 3">
-                    <figcaption>Low Poly House</figcaption>
+                <figure class="gallery-item">
+                    <img src="3D3.png" alt="Low Poly House" loading="lazy">
+                    <figcaption>
+                        <h3>Low Poly House</h3>
+                        <p>Stylized architecture with minimal polygons</p>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="3D4.png" alt="3D Model 4">
-                    <figcaption>Cup of Coffee</figcaption>
+                <figure class="gallery-item">
+                    <img src="3D4.png" alt="Coffee Cup 3D Model" loading="lazy">
+                    <figcaption>
+                        <h3>Cup of Coffee</h3>
+                        <p>Warm beverage with steam simulation</p>
+                    </figcaption>
                 </figure>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-info">
+                <p>Ready to start your project or have questions? Reach out to me through these channels:</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord: pathfinder157</span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>  johan.liebert157@gmail.com</span>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    
     <footer>
-        <p>&copy; 2025 Johan Art. All rights reserved.</p>
+        <div class="footer-content">
+            <img src="logo.png" alt="Johan Art Logo" style="max-width: 100px; margin-bottom: 1rem;">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#logos">Logos</a>
+                <a href="#models">3D Models</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <p class="copyright">&copy; 2025 Johan Art. All rights reserved.</p>
+        </div>
     </footer>
 </body>
-</html>
+    </html>
